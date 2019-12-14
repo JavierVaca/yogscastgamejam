@@ -7,10 +7,12 @@ public class ChimneySpawner : MonoBehaviour
 
     private float spawnTime = 0.5f;
 
+    private float[] minMaxSpawn = {0.5f, 2.0f};
+
     void Start()
     {
         // Set random spawn time at start of game.
-        spawnTime = Random.Range(0.15f, 1.5f);
+        spawnTime = Random.Range(minMaxSpawn[0], minMaxSpawn[1]);
     }
 
     // Update is called once per frame
@@ -33,7 +35,7 @@ public class ChimneySpawner : MonoBehaviour
             );
 
             timer = 0f;
-            spawnTime = Random.Range(0.15f, 0.8f);
+            spawnTime = Random.Range(minMaxSpawn[0], minMaxSpawn[1]);
         }
     }
 }

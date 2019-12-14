@@ -13,7 +13,7 @@ public class Chimney : MonoBehaviour
     {
         BoxCollider2D chimneyCollide = GetComponent<BoxCollider2D>();
 
-        float newHeight = Random.Range(0.25f, 1f) * 5f;
+        float newHeight = Random.Range(0.15f, 1f) * 4.5f;
 
         chimneyCollide.size = new Vector2(1f, newHeight);
         chimneyCollide.offset = Vector2.up * newHeight/2;
