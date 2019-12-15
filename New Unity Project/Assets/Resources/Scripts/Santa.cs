@@ -13,6 +13,7 @@ public class Santa : MonoBehaviour
     public int score = 0;
     public int lives = 5;
     public Text scoreText;
+    public Text livesText;
 
     Rigidbody2D rigid;
     Animator animator;
@@ -32,7 +33,16 @@ public class Santa : MonoBehaviour
     {
         MoveUpDown();
         DropGift();
+        CheckGameOver();
         scoreText.text = "Score: " + score;
+    }
+
+    private void CheckGameOver()
+    {
+        if (lives <= 0)
+        {
+
+        }
     }
 
     // Up and Down Controls
@@ -71,6 +81,7 @@ public class Santa : MonoBehaviour
         Invoke("ResetPosition", 1f);
         dead = true;
         animator.SetBool("dead", dead);
+        livesText.text = "Lives: " + lives;
     }
 
     private void ResetPosition()

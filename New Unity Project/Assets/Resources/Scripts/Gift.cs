@@ -22,7 +22,7 @@ public class Gift : MonoBehaviour
         if (transform.position.y < -4)
         {
             Destroy(gameObject);
-            santa.lives--;
+            santa.score--;
         }
     }
 
