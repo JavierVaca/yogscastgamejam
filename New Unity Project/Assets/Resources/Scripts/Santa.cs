@@ -15,6 +15,7 @@ public class Santa : MonoBehaviour
     public int lives = 5;
     public Text scoreText;
     public Text livesText;
+    AudioSource audioData;
 
     Rigidbody2D rigid;
     Animator animator;
@@ -27,6 +28,7 @@ public class Santa : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         animator = GetComponent<Animator>();
+        audioData = GetComponent<AudioSource>();
         livesText.text = "Lives: " + lives;
     }
 
@@ -83,6 +85,7 @@ public class Santa : MonoBehaviour
         Invoke("ResetPosition", 1f);
         dead = true;
         animator.SetBool("dead", dead);
+        audioData.Play();
         lives--;
         livesText.text = "Lives: " + lives;
     }
