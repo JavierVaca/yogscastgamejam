@@ -25,6 +25,7 @@ public class Santa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
         rigid = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         animator = GetComponent<Animator>();
