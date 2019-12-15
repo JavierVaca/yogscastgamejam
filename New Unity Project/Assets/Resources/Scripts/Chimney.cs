@@ -11,14 +11,14 @@ public class Chimney : MonoBehaviour
     // at start.
     void Start()
     {
-        BoxCollider2D chimneyCollide = GetComponent<BoxCollider2D>();
+        //BoxCollider2D chimneyCollide = GetComponent<BoxCollider2D>();
 
-        float newHeight = Random.Range(0.15f, 1f) * 4.5f;
+        //float newHeight = Random.Range(0.15f, 1f) * 4.5f;
 
-        chimneyCollide.size = new Vector2(1f, newHeight);
-        chimneyCollide.offset = Vector2.up * newHeight/2;
+        //chimneyCollide.size = new Vector2(1f, newHeight);
+        //chimneyCollide.offset = Vector2.up * newHeight/2;
 
-        ChimneyTop.GetComponent<Transform>().localPosition = Vector3.up * newHeight;
+        //ChimneyTop.GetComponent<Transform>().localPosition = Vector3.up * newHeight;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class Chimney : MonoBehaviour
         Move();
 
         // Delete chimney once off stage...
-        if (transform.position.x <= -10f)
+        if (transform.position.x <= -8f)
         {
             Destroy(gameObject);
         }
@@ -37,5 +37,14 @@ public class Chimney : MonoBehaviour
     void Move()
     {
         transform.Translate(Time.deltaTime * Vector3.left * chimneySpeed, Space.Self);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Santa player = collision.GetComponent<Santa>();
+            player.Dead();
+        }
     }
 }

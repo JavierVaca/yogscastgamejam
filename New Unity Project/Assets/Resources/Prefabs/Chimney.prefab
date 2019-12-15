@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1752117328761620078}
   m_Layer: 0
   m_Name: Chimney
-  m_TagString: Untagged
+  m_TagString: chimney
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,10 +43,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: -0.00000017881393, y: 0.21042013}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -55,9 +55,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.3465895, y: 0.42084026}
   m_EdgeRadius: 0
 --- !u!114 &1752117328761620078
 MonoBehaviour:
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4859a71f589e419575cdbc843fd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chimneySpeed: 5
+  chimneySpeed: 1
   ChimneyTop: {fileID: 6430861163734382679}
 --- !u!1 &6430861163734382679
 GameObject:
@@ -141,7 +141,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 7906abf8709678748a38aea8609158a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
