@@ -10,7 +10,11 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoretext.text = "Score: " + Santa.score;
+        if (scoretext != null)
+        {
+            scoretext.text = "Score: " + Santa.score;
+
+        }
     }
 
     // Update is called once per frame
