@@ -6,7 +6,10 @@ public class Chimney : MonoBehaviour
     public float chimneySpeed = 10f;
 
     public GameObject ChimneyTop;
-    
+    private ChimneySpawner spawner;
+
+
+
     // Randomize height and position top
     // at start.
     void Start()
@@ -19,6 +22,7 @@ public class Chimney : MonoBehaviour
         //chimneyCollide.offset = Vector2.up * newHeight/2;
 
         //ChimneyTop.GetComponent<Transform>().localPosition = Vector3.up * newHeight;
+        spawner = GameObject.FindGameObjectWithTag("spawner").GetComponent<ChimneySpawner>();
     }
 
     // Update is called once per frame
@@ -36,14 +40,14 @@ public class Chimney : MonoBehaviour
     // Chimney moves from right to left of the screen.
     void Move()
     {
-        transform.Translate(Time.deltaTime * Vector3.left * chimneySpeed, Space.Self);
+        transform.Translate(Time.deltaTime * Vector3.left * spawner.chimneySpeed, Space.Self);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.collider.tag == "Player")
         {
-            Santa player = collision.GetComponent<Santa>();
+            Santa player = collision.gameObject.GetComponent<Santa>();
             player.Dead();
         }
     }

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Santa : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Santa : MonoBehaviour
     public KeyCode pushDown     = KeyCode.DownArrow;
 
     public float altitudeSpeed;
+    public int score = 0;
+    public int lives = 5;
+    public Text scoreText;
 
     Rigidbody2D rigid;
     Animator animator;
@@ -28,6 +32,7 @@ public class Santa : MonoBehaviour
     {
         MoveUpDown();
         DropGift();
+        scoreText.text = "Score: " + score;
     }
 
     // Up and Down Controls
