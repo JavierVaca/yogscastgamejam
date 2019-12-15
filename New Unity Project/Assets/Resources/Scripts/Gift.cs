@@ -22,7 +22,7 @@ public class Gift : MonoBehaviour
         if (transform.position.y < -4)
         {
             Destroy(gameObject);
-            santa.score--;
+            Santa.score--;
         }
     }
 
@@ -30,9 +30,9 @@ public class Gift : MonoBehaviour
     {
         if (collision.collider.tag == "chimney")
         {
-            santa.score++;
+            Santa.score++;
 
-            if (santa.score != 0 && santa.score % 20 == 0)
+            if (Santa.score != 0 && Santa.score % 20 == 0)
             {
                 spawner.chimneySpeed++;
             }

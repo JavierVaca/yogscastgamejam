@@ -1,6 +1,7 @@
 ﻿
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Santa : MonoBehaviour
@@ -10,7 +11,7 @@ public class Santa : MonoBehaviour
     public KeyCode pushDown     = KeyCode.DownArrow;
 
     public float altitudeSpeed;
-    public int score = 0;
+    public static int score = 0;
     public int lives = 5;
     public Text scoreText;
     public Text livesText;
@@ -26,6 +27,7 @@ public class Santa : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         animator = GetComponent<Animator>();
+        livesText.text = "Lives: " + lives;
     }
 
     // Update is called once per frame
@@ -41,7 +43,7 @@ public class Santa : MonoBehaviour
     {
         if (lives <= 0)
         {
-
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -81,6 +83,7 @@ public class Santa : MonoBehaviour
         Invoke("ResetPosition", 1f);
         dead = true;
         animator.SetBool("dead", dead);
+        lives--;
         livesText.text = "Lives: " + lives;
     }
 
