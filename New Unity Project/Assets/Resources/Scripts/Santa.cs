@@ -11,6 +11,10 @@ public class Santa : MonoBehaviour
 
     Rigidbody2D rigid;
 
+    public int score = 0;
+
+    public int lives = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,8 @@ public class Santa : MonoBehaviour
     {
         MoveUpDown();
         DropGift();
+
+        //Debug.Log(string.Format("Score: {0}; Lives: {1}", score, lives));
     }
 
     // Up and Down Controls
@@ -46,8 +52,10 @@ public class Santa : MonoBehaviour
     {
         if (Input.GetKeyDown(dropButton))
         {
+            GameObject newGift = (GameObject)Resources.Load("Prefabs/Gift");
+
             Instantiate(
-                (GameObject)Resources.Load("Prefabs/Gift"),
+                newGift,
                 transform.position - new Vector3(0.5f, 0.35f, 0),
                 Quaternion.identity
             );

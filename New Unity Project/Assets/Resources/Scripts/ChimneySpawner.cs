@@ -9,6 +9,8 @@ public class ChimneySpawner : MonoBehaviour
 
     private float[] minMaxSpawn = {0.5f, 2.0f};
 
+    public float chimneySpeed = 2;
+
     void Start()
     {
         // Set random spawn time at start of game.
@@ -28,11 +30,15 @@ public class ChimneySpawner : MonoBehaviour
     {
         if (timer > spawnTime)
         {
+            GameObject newChimney = (GameObject)Resources.Load("Prefabs/Chimney");
+
             Instantiate(
-                (GameObject)Resources.Load("Prefabs/Chimney"),
+                newChimney,
                 transform.position,
                 Quaternion.identity
             );
+
+            Debug.Log(chimneySpeed);
 
             timer = 0f;
             spawnTime = Random.Range(minMaxSpawn[0], minMaxSpawn[1]);

@@ -349,6 +349,8 @@ MonoBehaviour:
   pullUp: 273
   pushDown: 274
   altitudeSpeed: 200
+  score: 0
+  lives: 5
 --- !u!1 &1061762114
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +363,7 @@ GameObject:
   - component: {fileID: 1061762115}
   m_Layer: 0
   m_Name: ChimneySpawn
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -378,6 +380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca66d0dc03df37f49b307617a20e6371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chimneySpeed: 2
+  speed_level: 1
 --- !u!4 &1061762116
 Transform:
   m_ObjectHideFlags: 0
