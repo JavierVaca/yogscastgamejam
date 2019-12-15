@@ -7,7 +7,7 @@ public class ChimneySpawner : MonoBehaviour
 
     private float spawnTime = 0.5f;
 
-    private float[] minMaxSpawn = {0.5f, 2.0f};
+    private float[] minMaxSpawn = {1f, 3f};
 
     public float chimneySpeed = 2;
 
