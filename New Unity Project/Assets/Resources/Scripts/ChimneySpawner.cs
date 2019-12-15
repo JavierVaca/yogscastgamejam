@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ChimneySpawner : MonoBehaviour
 {
+    public GameUI gameUI;
+
     private float timer = 0f;
 
     private float spawnTime = 0.5f;
@@ -20,9 +22,16 @@ public class ChimneySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NewChimney();
+        if (!gameUI.isGameOver)
+        {
+            NewChimney();
+            timer += Time.deltaTime;
+        }
 
-        timer += Time.deltaTime;
+        if (gameUI.isGameOver)
+        {
+            chimneySpeed = 0;
+        }
     }
 
     // Spawn new chimney every

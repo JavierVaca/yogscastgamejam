@@ -15,19 +15,35 @@ public class Santa : MonoBehaviour
 
     public int lives = 5;
 
+    public GameUI gameUI;
+
     // Start is called before the first frame update
     void Start()
     {
+        score = 0;
+        lives = 5;
+
         rigid = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        MoveUpDown();
-        DropGift();
+        if (gameUI.isGameOver == false)
+        {
+            MoveUpDown();
+            DropGift();
+        }
 
-        //Debug.Log(string.Format("Score: {0}; Lives: {1}", score, lives));
+        if (lives <= 0)
+        {
+            gameUI.isGameOver = true;
+        }
+    }
+
+    void OnCollisionEnter2D()
+    {
+        lives--;
     }
 
     // Up and Down Controls

@@ -178,6 +178,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d4859a71f589e419575cdbc843fd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chimneySpeed: 5
   ChimneyTop: {fileID: 878615019938377687}
   santa: {fileID: 0}
